@@ -33,10 +33,10 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'url' => env('DB_URL'),
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'url' => env('RDS_URL'),
+            'database' => env('RDS_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'foreign_key_constraints' => env('RDS_FOREIGN_KEYS', true),
         ],
 
         'mysql' => [

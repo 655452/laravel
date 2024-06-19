@@ -15,3 +15,9 @@ Route::prefix('/item')->group( function(){
     Route::put('/{id}',[ItemController::class,'update']);
     Route::delete('/{id}',[ItemController::class,'destroy']);
 });
+Route::get("/run-migrations",function(){
+    Artisan::call('optimize:clear');
+    Artisan::call('migrate:fresh');
+
+    return "Migrations Executed Successfully";
+});
